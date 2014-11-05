@@ -2,12 +2,12 @@
 
 ## BC BREAK: time type resets date fields to UNIX epoch
 
-When mapping `time` type field to PHP's `DateTime` instance all unused date fields are 
-reset to UNIX epoch (i.e. 1970-01-01). This might break any logic which relies on comparing 
-`DateTime` instances with date fields set to the current date. 
+When mapping `time` type field to PHP's `DateTime` instance all unused date fields are
+reset to UNIX epoch (i.e. 1970-01-01). This might break any logic which relies on comparing
+`DateTime` instances with date fields set to the current date.
 
 Use `!` format prefix (see http://php.net/manual/en/datetime.createfromformat.php) for parsing
-time strings to prevent having different date fields when comparing user input and `DateTime` 
+time strings to prevent having different date fields when comparing user input and `DateTime`
 instances as mapped by Doctrine.
 
 ## BC BREAK: Doctrine\DBAL\Schema\Table
